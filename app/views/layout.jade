@@ -1,0 +1,41 @@
+doctype html
+html(lang='en')
+  head
+    meta(charset='UTF-8')
+    meta(name='viewport', content='width=device-width')
+    meta(http-equiv='X-UA-Compatible', content='IE=edge')
+    title #{sitename}
+    link(rel="stylesheet" type="text/css" href="/css/bootstrap.cosmo.min.css")
+    link(rel="stylesheet" type="text/css" href="/css/font-awesome.min.css")
+    link(rel="stylesheet" type="text/css" href="/css/style.css")
+    
+  body
+    nav.navbar.navbar-default
+      .container-fluid
+        .navbar-header
+          button.navbar-toggle.collapsed(type='button', data-toggle='collapse')
+            span.sr-only Toggle navigation
+            span.icon-bar
+            span.icon-bar
+            span.icon-bar
+          a.navbar-brand(href='/') #{sitename}
+        #navbar-1.collapse.navbar-collapse
+          ul.nav.navbar-nav
+            if user != undefined
+              if user.role == "admin"
+                li
+                  a(href='/admin/') Admin Panel
+          ul.nav.navbar-nav.navbar-right
+            li
+              if user != undefined
+                a(href='/auth/logout').btn.btn-lin Logout
+              else
+                a(href='/auth/login').btn.btn-lin Login
+    .container
+      h2 #{title}
+      block content
+      block js
+        script(src='/js/jquery-2.2.0.min.js')
+        script(src='/js/bootstrap.min.js')
+        if ENV_DEVELOPMENT
+          script(src='http://localhost:35729/livereload.js')

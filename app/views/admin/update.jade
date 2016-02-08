@@ -1,0 +1,30 @@
+extends ../layout
+
+block content 
+  form(method='post', action='/admin/update').form-horizontal
+    input(type='hidden', name='id', value='#{changeUser._id}')
+    .form-group
+      label(for='inputUsername').col-lg-1.control-label Username
+      .col-lg-4
+        input(id='inputUsername', placeholder='Username', type='text', name='inputUsername', value='#{changeUser.username}').form-control
+    .form-group
+      label(for='inputRole').col-lg-1.control-label Role
+      .col-lg-4
+        select(id='inputRole', name='inputRole').form-control
+          option admin
+          if changeUser.role === 'teacher'
+            option(selected) teacher
+          else
+            option teacher
+          if changeUser.role === 'student'
+            option(selected) student
+          else
+            option student
+    .form-group
+      .col-lg-4
+        button(type='submit').btn.btn-primary Submit
+  form(method='get' action='/admin/updatePassword').form-horizontal
+    input(type='hidden', name='id', value='#{changeUser._id}')
+    .form-group
+      .col-lg-4
+        button(id='inputPassword').btn.btn-primary Change Password

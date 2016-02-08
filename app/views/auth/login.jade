@@ -1,0 +1,11 @@
+extends ../layout
+
+block content
+  form(method='post').form-signin
+    h2.form-signin-heading Login
+    label(for='inputUsername').sr-only Username
+    input(type='text',id='inputUsername',placeholder='Username',name='username',required,autofocus).form-control
+    label(for='inputPassword').sr-only Password
+    input(type='password',id='inputPassword',placeholder='Password',name='password',required).form-control
+    button(type='submit').btn.btn-primary.btn-block Login
+    
