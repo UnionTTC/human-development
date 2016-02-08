@@ -1,0 +1,24 @@
+extends ../layout
+
+block content
+  a(href='/admin/create').btn.btn-default Add User
+  table.table.table-striped.table-hover
+    thead
+      tr
+        th username
+        th role
+        th edit
+        th delete
+    tbody
+      each User in users
+        tr
+          td #{User.username}
+          td #{User.role}
+          td
+            form(action='/admin/update')
+              input(type='hidden', name='id', value='#{User._id}')
+              button.btn.btn-link.btn-sm edit
+          td
+            form(method='post', action='/admin/delete')
+              input(type='hidden', name='id', value='#{User._id}')
+              button.btn.btn-link.btn-sm delete
