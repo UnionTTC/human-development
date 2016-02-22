@@ -8,7 +8,7 @@ html(lang='en')
     link(rel="stylesheet" type="text/css" href="/css/bootstrap.cosmo.min.css")
     link(rel="stylesheet" type="text/css" href="/css/font-awesome.min.css")
     link(rel="stylesheet" type="text/css" href="/css/style.css")
-    
+
   body
     nav.navbar.navbar-default
       .container-fluid
@@ -25,6 +25,23 @@ html(lang='en')
               if user.role == "admin"
                 li
                   a(href='/admin/') Admin Panel
+          // Testing
+          ul.nav.navbar-nav
+            if user != undefined
+              if user.role == "admin"
+                li.dropdown
+                  a.dropdown-toggle(href='/report', data-toggle="dropdown") Reports
+                    b.caret
+                  ul.dropdown-menu
+                    li
+                      a(href="/report/template1") Report Type 1
+                    li
+                      a(href="/report/template2") Report Type 2
+                    li
+                      a(href="/report/template3") Report Type 3
+                    li
+                      a(href="/report/template4") Report Type 4
+          // Testing
           ul.nav.navbar-nav.navbar-right
             li
               if user != undefined
