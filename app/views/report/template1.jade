@@ -10,8 +10,9 @@ block content
         th Major
         th Meet Requirements
     tbody
-      tr
-        td Dylan
-        td Smith
-        td Computer Science
-        td Yes
+      each student in students
+        tr
+          td #{student.LastName}
+          td #{student.FirstName}
+          td #{student.Major}
+          td Yes

@@ -1,7 +1,8 @@
 var express = require('express')
 var router = express.Router()
-// var mongoose = require('mongoose')
+var mongoose = require('mongoose')
 var auth = require('../../config/auth')
+var Student = mongoose.model("Student")
 
 module.exports = function (app) {
   app.use('/report', router)
@@ -20,10 +21,17 @@ router.get('/', function (req, res, next) {
 })
 
 router.get('/template1', function (req, res, next) {
-  res.render('report/template1', {
-    title: 'Human Development',
-    user: req.user
-  })
+  Student.find({'Provisional.Autobiography':true})
+    .sort({LastName: 1})
+    .exec()
+    .then(function (students) {
+      console.log(students)
+      res.render('report/template1', {
+        title: 'Human Development',
+        students: students,
+        user: req.user
+      })
+    })
 })
 
 router.get('/template2', function (req, res, next) {
