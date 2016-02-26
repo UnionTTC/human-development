@@ -3,6 +3,7 @@ var router = express.Router()
 var mongoose = require('mongoose')
 var auth = require('../../config/auth')
 var Student = mongoose.model('Student')
+var moment = require('moment')
 
 module.exports = function (app) {
   app.use('/student', router)
@@ -32,6 +33,7 @@ router.route('/edit')
         res.render('student/edit', {
           title: 'Edit',
           student: student,
+          moment: moment,
           user: req.user
         })
       })

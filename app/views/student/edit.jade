@@ -28,7 +28,7 @@ block content
       .form-group
         label(for='inputBeganEduProg').col-lg-2.control-label Began Education Program
         .col-lg-2
-          input(type='date', name='inputBeganEduProg', value='#{student.BeganEduProg}').form-control
+          input(type='date', name='inputBeganEduProg', value='#{moment(student.BeganEduProg).format("YYYY-MM-DD")}').form-control
       .form-group
         label(for='inputHighschoolName').col-lg-2.control-label HS Name
         .col-lg-2
@@ -40,7 +40,7 @@ block content
       .form-group
         label(for='inputBackgroundCheck').col-lg-2.control-label Background Check
         .col-lg-2
-          input(type='date', name='inputBackgroundCheck', value='#{student.BackgroundCheck}').form-control
+          input(type='date', name='inputBackgroundCheck', value='#{moment(student.BackgroundCheck).format("YYYY-MM-DD")}').form-control
       //- gpa will go here
     fieldset
       legend Provisional Status
@@ -77,11 +77,11 @@ block content
       .form-group
         label(for='inputProvisional.FirstFelonStatement').col-lg-2.control-label Provisional FirstFelonStatement
         .col-lg-2
-          input(type='date', name='inputProvisional.FirstFelonStatement', value='#{student.Provisional.FirstFelonStatement}').form-control
+          input(type='date', name='inputProvisional.FirstFelonStatement', value='#{moment(student.Provisional.FirstFelonStatement).format("YYYY-MM-DD")}').form-control
       .form-group
         label(for='inputProvisional.TPCApproval').col-lg-2.control-label TPCApproval
         .col-lg-2
-          input(type='date', name='inputProvisional.TPCApproval', value='#{student.Provisional.TPCApproval}').form-control
+          input(type='date', name='inputProvisional.TPCApproval', value='#{moment(student.Provisional.TPCApproval).format("YYYY-MM-DD")}').form-control
       .form-group
         label(for='inputProvisional.Comments').col-lg-2.control-label Comments
         .col-lg-2
@@ -104,15 +104,15 @@ block content
       .form-group
         label(for='inputCandidacy.Recommendation').col-lg-2.control-label Candidacy Recommendation
         .col-lg-2
-          input(type='date', name='inputCandidacy.Recommendation', value='#{student.Candidacy.Recommendation}').form-control
+          input(type='date', name='inputCandidacy.Recommendation', value='#{moment(student.Candidacy.Recommendation).format("YYYY-MM-DD")}').form-control
       .form-group
         label(for='inputCandidacy.FelonyStatement').col-lg-2.control-label Felony Statement
         .col-lg-2
-          input(type='date', name='inputCandidacy.FelonyStatement', value='#{student.Candidacy.FelonyStatement}').form-control
+          input(type='date', name='inputCandidacy.FelonyStatement', value='#{moment(student.Candidacy.FelonyStatement).format("YYYY-MM-DD")}').form-control
       .form-group
         label(for='inputCandidacy.TCPApproval').col-lg-2.control-label TCP Approval
         .col-lg-2
-          input(type='date', name='inputCandidacy.TCPApproval', value='#{student.Candidacy.TCPApproval}').form-control
+          input(type='date', name='inputCandidacy.TCPApproval', value='#{moment(student.Candidacy.TCPApproval).format("YYYY-MM-DD")}').form-control
       .form-group
         label(for='inputCandidacy.PhilosophyOBHRS').col-lg-2.control-label PhilosophyOBHRS
         .col-lg-1
@@ -166,15 +166,15 @@ block content
       .form-group
         label(for='inputPreTeaching.FelonyStatement').col-lg-2.control-label FelonyStatement
         .col-lg-2
-          input(type='date', name='inputPreTeaching.FelonyStatement', value='#{student.PreTeaching.FelonyStatement}').form-control
+          input(type='date', name='inputPreTeaching.FelonyStatement', value='#{moment(student.PreTeaching.FelonyStatement).format("YYYY-MM-DD")}').form-control
       .form-group
         label(for='inputPreTeaching.DateStudentTeaching').col-lg-2.control-label DateStudentTeaching
         .col-lg-2
-          input(type='date', name='inputPreTeaching.DateStudentTeaching', value='#{student.PreTeaching.DateStudentTeaching}').form-control
+          input(type='date', name='inputPreTeaching.DateStudentTeaching', value='#{moment(student.PreTeaching.DateStudentTeaching).format("YYYY-MM-DD")}').form-control
       .form-group
         label(for='inputPreTeaching.TCPApprovalToST').col-lg-2.control-label TCPApprovalToST
         .col-lg-2
-          input(type='date', name='inputPreTeaching.TCPApprovalToST', value='#{student.PreTeaching.TCPApprovalToST}').form-control
+          input(type='date', name='inputPreTeaching.TCPApprovalToST', value='#{moment(student.PreTeaching.TCPApprovalToST).format("YYYY-MM-DD")}').form-control
       .form-group
         label(for='inputPreTeaching.SPEDOBSHRS').col-lg-2.control-label SPEDOBSHRS
         .col-lg-1
@@ -207,19 +207,19 @@ block content
       .form-group
         label(for='inputStudentTeaching.FelonyStatement').col-lg-2.control-label FelonyStatement
         .col-lg-2
-          input(type='date', name='inputStudentTeaching.FelonyStatement', value='#{student.StudentTeaching.FelonyStatement}').form-control
+          input(type='date', name='inputStudentTeaching.FelonyStatement', value='#{moment(student.StudentTeaching.FelonyStatement).format("YYYY-MM-DD")}').form-control
       .form-group
         label(for='inputStudentTeaching.StudentTeachingStartDate').col-lg-2.control-label StudentTeachingStartDate
         .col-lg-2
-          input(type='date', name='inputStudentTeaching.StudentTeachingStartDate', value='#{student.StudentTeaching.StudentTeachingStartDate}').form-control
+          input(type='date', name='inputStudentTeaching.StudentTeachingStartDate', value='#{moment(student.StudentTeaching.StudentTeachingStartDate).format("YYYY-MM-DD")}').form-control
       .form-group
         label(for='inputStudentTeaching.GradDate').col-lg-2.control-label Graduation Date
         .col-lg-2
-          input(type='date', name='inputStudentTeaching.GradDate', value='#{student.StudentTeaching.GradDate}').form-control
+          input(type='date', name='inputStudentTeaching.GradDate', value='#{moment(student.StudentTeaching.GradDate).format("YYYY-MM-DD")}').form-control
       .form-group
         label(for='inputStudentTeaching.InitialCertificationDate').col-lg-2.control-label Initial Certification Date
         .col-lg-2
-          input(type='date', name='inputStudentTeaching.InitialCertificationDate', value='#{student.StudentTeaching.InitialCertificationDate}').form-control
+          input(type='date', name='inputStudentTeaching.InitialCertificationDate', value='#{moment(student.StudentTeaching.InitialCertificationDate).format("YYYY-MM-DD")}').form-control
       .form-group
         label(for='inputStudentTeaching.PraxisII.TestName').col-lg-2.control-label PraxisII Test Name
         .col-lg-2
@@ -227,7 +227,7 @@ block content
       .form-group
         label(for='inputStudentTeaching.PraxisII.DateTaken').col-lg-2.control-label PraxisII Date Taken
         .col-lg-2
-          input(type='date', name='inputStudentTeaching.PraxisII.DateTaken', value='#{student.StudentTeaching.PraxisII.DateTaken}').form-control
+          input(type='date', name='inputStudentTeaching.PraxisII.DateTaken', value='#{moment(student.StudentTeaching.PraxisII.DateTaken).format("YYYY-MM-DD")}').form-control
       .form-group
         label(for='inputStudentTeaching.PraxisII.Score').col-lg-2.control-label PraxisII Score
         .col-lg-2
@@ -244,7 +244,7 @@ block content
       .form-group
         label(for='inputStudentTeaching.FirstSemester.Dates').col-lg-2.control-label Dates
         .col-lg-2
-          input(type='date', name='inputStudentTeaching.FirstSemester.Dates', value='#{student.StudentTeaching.FirstSemester.Dates}').form-control
+          input(type='date', name='inputStudentTeaching.FirstSemester.Dates', value='#{moment(student.StudentTeaching.FirstSemester.Dates).format("YYYY-MM-DD")}').form-control
       .form-group
         label(for='inputStudentTeaching.FirstSemester.Contract').col-lg-2.control-label Contract
         .col-lg-1
@@ -270,7 +270,7 @@ block content
       .form-group
         label(for='inputStudentTeaching.SecondSemester.Dates').col-lg-2.control-label Dates
         .col-lg-2
-          input(type='date', name='inputStudentTeaching.SecondSemester.Dates', value='#{student.StudentTeaching.SecondSemester.Dates}').form-control
+          input(type='date', name='inputStudentTeaching.SecondSemester.Dates', value='#{moment(student.StudentTeaching.SecondSemester.Dates).format("YYYY-MM-DD")}').form-control
       .form-group
         label(for='inputStudentTeaching.SecondSemester.Contract').col-lg-2.control-label Contract
         .col-lg-1
