@@ -1,0 +1,26 @@
+extends ../layout
+
+block content
+  a(href='/student/add').btn.btn-default Add User
+  table.table.table-striped.table-hover
+    thead
+      tr
+        th UC ID
+        th Name
+        th Major
+        th View
+        th Delete
+    tbody
+      each student in students
+        tr
+          td #{student.UCID}
+          td #{student.FirstName} #{student.LastName} 
+          td #{student.Major}
+          td
+            form(action='/student/edit')
+              input(type='hidden', name='id', value='#{student._id}')
+              button.btn.btn-link.btn-sm View
+          td
+            form(method='post', action='/student/delete')
+              input(type='hidden', name='id', value='#{student._id}')
+            button.btn.btn-link.btn-sm Delete

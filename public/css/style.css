@@ -32,3 +32,11 @@
   border-top-left-radius: 0;
   border-top-right-radius: 0;
 }
+
+
+.form-control.editCheckbox{
+  margin: 1em;
+  width: 25%;
+  padding-top: 1em;
+  height: 1em;
+}

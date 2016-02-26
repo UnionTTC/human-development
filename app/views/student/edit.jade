@@ -1,0 +1,286 @@
+extends ../layout
+
+block content
+  form(method='post',action='/student/edit').form-horizontal
+    fieldset
+      legend General Information
+      input(type='hidden', name='id', value='#{student._id}')
+      .form-group
+        label(for='inputUCID').col-lg-2.control-label UCID
+        .col-lg-2
+          input(type='text', name='inputUCID', value='#{student.UCID}').form-control
+      .form-group
+        label(for='inputFirstName').col-lg-2.control-label First Name
+        .col-lg-2
+          input(type='text', name='inputFirstName', value='#{student.FirstName}').form-control
+      .form-group
+        label(for='inputLastNames').col-lg-2.control-label Last Name
+        .col-lg-2 
+          input(type='text', name='inputLastName', value='#{student.LastName}').form-control
+      .form-group
+        label(for='inputMajor').col-lg-2.control-label Major
+        .col-lg-2
+          input(type='text', name='inputMajor', value='#{student.Major}').form-control
+      .form-group
+        label(for='inputEthnicity').col-lg-2.control-label Ethnicity
+        .col-lg-2
+          input(type='text', name='inputEthnicity', value='#{student.Ethnicity}').form-control
+      .form-group
+        label(for='inputBeganEduProg').col-lg-2.control-label Began Education Program
+        .col-lg-2
+          input(type='date', name='inputBeganEduProg', value='#{student.BeganEduProg}').form-control
+      .form-group
+        label(for='inputHighschoolName').col-lg-2.control-label HS Name
+        .col-lg-2
+          input(type='text', name='inputHighschoolName', value='#{student.HighschoolName}').form-control
+      .form-group
+        label(for='inputIsSDA').col-lg-2.control-label SDA?
+        .col-lg-1
+          input(type='checkbox', name='inputIsSDA', checked=student.isSDA).form-control.editCheckbox
+      .form-group
+        label(for='inputBackgroundCheck').col-lg-2.control-label Background Check
+        .col-lg-2
+          input(type='date', name='inputBackgroundCheck', value='#{student.BackgroundCheck}').form-control
+      //- gpa will go here
+    fieldset
+      legend Provisional Status
+      .form-group
+        label(for='inputProvisional.Autobiography').col-lg-2.control-label Autobiography
+        .col-lg-1
+          input(type='checkbox', name='inputProvisional.Autobiography', checked=student.Provisional.Autobiography).form-control.editCheckbox
+        label(for='inputProvisional.ProvisionalApplication').col-lg-2.control-label Provisional Application
+        .col-lg-1
+          input(type='checkbox', name='inputProvisional.ProvisionalApplication', checked=student.Provisional.ProvisionalApplication).form-control.editCheckbox
+        label(for='inputProvisional.SpeechAndHearing').col-lg-2.control-label Speech and Hearing
+        .col-lg-1
+          input(type='checkbox', name='inputProvisional.SpeechAndHearing', checked=student.Provisional.SpeechAndHearing).form-control.editCheckbox
+        label(for='inputProvisional.MyersBriggs').col-lg-2.control-label MyersBriggs
+        .col-lg-1
+          input(type='checkbox', name='inputProvisional.MyersBriggs', checked=student.Provisional.MyersBriggs).form-control.editCheckbox
+        label(for='inputProvisional.R1PastorOrDean').col-lg-2.control-label R1PastorOrDean
+        .col-lg-1
+          input(type='checkbox', name='inputProvisional.R1PastorOrDean', checked=student.Provisional.R1PastorOrDean).form-control.editCheckbox
+        label(for='inputProvisional.R2WorkSupervisor').col-lg-2.control-label R2WorkSupervisor
+        .col-lg-1
+          input(type='checkbox', name='inputProvisional.R2WorkSupervisor', checked=student.Provisional.R2WorkSupervisor).form-control.editCheckbox
+        label(for='inputProvisional.R3Teacher').col-lg-2.control-label R3Teacher
+        .col-lg-1
+          input(type='checkbox', name='inputProvisional.R3Teacher', checked=student.Provisional.R3Teacher).form-control.editCheckbox
+      .form-group
+        label(for='inputProvisional.EDUC125').col-lg-2.control-label EDUC125
+        .col-lg-2
+          input(type='text', name='inputProvisional.EDUC125', value='#{student.Provisional.EDUC125}').form-control
+      .form-group
+        label(for='inputProvisional.ObservationHours').col-lg-2.control-label ObservationHours
+        .col-lg-1
+          input(type='text', name='inputProvisional.ObservationHours', value='#{student.Provisional.ObservationHours}').form-control
+      .form-group
+        label(for='inputProvisional.FirstFelonStatement').col-lg-2.control-label Provisional FirstFelonStatement
+        .col-lg-2
+          input(type='date', name='inputProvisional.FirstFelonStatement', value='#{student.Provisional.FirstFelonStatement}').form-control
+      .form-group
+        label(for='inputProvisional.TPCApproval').col-lg-2.control-label TPCApproval
+        .col-lg-2
+          input(type='date', name='inputProvisional.TPCApproval', value='#{student.Provisional.TPCApproval}').form-control
+      .form-group
+        label(for='inputProvisional.Comments').col-lg-2.control-label Comments
+        .col-lg-2
+          input(type='text', name='inputProvisional.Comments', value='#{student.Provisional.Comments}').form-control
+    fieldset
+      legend Candicacy Status
+      .form-group
+        label(for='inputCandidacy.DiversityOBHRS').col-lg-2.control-label DiversityOBHRS
+        .col-lg-1
+          input(type='checkbox', name='inputCandidacy.DiversityOBHRS', checked=student.Candidacy.DiversityOBHRS).form-control.editCheckbox
+        label(for='inputCandidacy.CandidancyApplication').col-lg-2.control-label CandidancyApplication
+        .col-lg-1
+          input(type='checkbox', name='inputCandidacy.CandidancyApplication', checked=student.Candidacy.CandidancyApplication).form-control.editCheckbox
+        label(for='inputCandidacy.CandidacyInterview').col-lg-2.control-label CandidacyInterview
+        .col-lg-1
+          input(type='checkbox', name='inputCandidacy.CandidacyInterview', checked=student.Candidacy.CandidacyInterview).form-control.editCheckbox
+        label(for='inputCandidacy.SophmorePortfolio').col-lg-2.control-label SophmorePortfolio
+        .col-lg-1
+          input(type='checkbox', name='inputCandidacy.SophmorePortfolio', checked=student.Candidacy.SophmorePortfolio).form-control.editCheckbox
+      .form-group
+        label(for='inputCandidacy.Recommendation').col-lg-2.control-label Candidacy Recommendation
+        .col-lg-2
+          input(type='date', name='inputCandidacy.Recommendation', value='#{student.Candidacy.Recommendation}').form-control
+      .form-group
+        label(for='inputCandidacy.FelonyStatement').col-lg-2.control-label Felony Statement
+        .col-lg-2
+          input(type='date', name='inputCandidacy.FelonyStatement', value='#{student.Candidacy.FelonyStatement}').form-control
+      .form-group
+        label(for='inputCandidacy.TCPApproval').col-lg-2.control-label TCP Approval
+        .col-lg-2
+          input(type='date', name='inputCandidacy.TCPApproval', value='#{student.Candidacy.TCPApproval}').form-control
+      .form-group
+        label(for='inputCandidacy.PhilosophyOBHRS').col-lg-2.control-label PhilosophyOBHRS
+        .col-lg-1
+          input(type='text', name='inputCandidacy.PhilosophyOBHRS', value='#{student.Candidacy.PhilosophyOBHRS}').form-control
+        label(for='inputCandidacy.Educ218').col-lg-2.control-label Educ 218
+        .col-lg-1
+          input(type='text', name='inputCandidacy.Educ218', value='#{student.Candidacy.Educ218}').form-control
+        label(for='inputCandidacy.Educ225').col-lg-2.control-label Educ 225
+        .col-lg-1
+          input(type='text', name='inputCandidacy.Educ225', value='#{student.Candidacy.Educ225}').form-control
+      .form-group
+        label(for='inputCandidacy.Comments').col-lg-2.control-label Comments
+        .col-lg-2
+          input(type='text', name='inputCandidacy.Comments', value='#{student.Candidacy.Comments}').form-control
+      //- PPST/CORE tests will go here
+    fieldset
+      legend PreTeaching Status
+      .form-group
+        label(for='inputPreTeaching.StudentTeachingAP').col-lg-2.control-label DiversityOBHRS
+        .col-lg-1
+          input(type='checkbox', name='inputPreTeaching.StudentTeachingAP', checked=student.PreTeaching.StudentTeachingAP).form-control.editCheckbox
+        label(for='inputPreTeaching.Recommendation').col-lg-2.control-label Recommendation
+        .col-lg-1
+          input(type='checkbox', name='inputPreTeaching.Recommendation', checked=student.PreTeaching.Recommendation).form-control.editCheckbox
+        label(for='inputPreTeaching.BackgroundCheckAP').col-lg-2.control-label BackgroundCheckAP
+        .col-lg-1
+          input(type='checkbox', name='inputPreTeaching.BackgroundCheckAP', checked=student.PreTeaching.BackgroundCheckAP).form-control.editCheckbox
+        label(for='inputCandidacy.DiversityOBHRS').col-lg-2.control-label OneSourceSubmission
+        .col-lg-1
+          input(type='checkbox', name='inputPreTeaching.OneSourceSubmission', checked=student.PreTeaching.OneSourceSubmission).form-control.editCheckbox
+        label(for='inputPreTeaching.WorkRequest').col-lg-2.control-label WorkRequest
+        .col-lg-1
+          input(type='checkbox', name='inputPreTeaching.WorkRequest', checked=student.PreTeaching.WorkRequest).form-control.editCheckbox
+        label(for='inputPreTeaching.PhysicalTBTest').col-lg-2.control-label PhysicalTBTest
+        .col-lg-1
+          input(type='checkbox', name='inputPreTeaching.PhysicalTBTest', checked=student.PreTeaching.PhysicalTBTest).form-control.editCheckbox
+        label(for='inputPreTeaching.JRPortfolio').col-lg-2.control-label JRPortfolio
+        .col-lg-1
+          input(type='checkbox', name='inputPreTeaching.JRPortfolio', checked=student.PreTeaching.JRPortfolio).form-control.editCheckbox
+        label(for='inputPreTeaching.PreSessionST').col-lg-2.control-label PreSessionST
+        .col-lg-1
+          input(type='checkbox', name='inputPreTeaching.PreSessionST', checked=student.PreTeaching.PreSessionST).form-control.editCheckbox
+        label(for='inputPreTeaching.LearingTheory').col-lg-2.control-label LearingTheory
+        .col-lg-1
+          input(type='checkbox', name='inputPreTeaching.LearingTheory', checked=student.PreTeaching.LearingTheory).form-control.editCheckbox
+        label(for='inputPreTeaching.GenSecMethOB').col-lg-2.control-label GenSecMethOB
+        .col-lg-1
+          input(type='checkbox', name='inputPreTeaching.GenSecMethOB', checked=student.PreTeaching.GenSecMethOB).form-control.editCheckbox
+          
+          
+      .form-group
+        label(for='inputPreTeaching.FelonyStatement').col-lg-2.control-label FelonyStatement
+        .col-lg-2
+          input(type='date', name='inputPreTeaching.FelonyStatement', value='#{student.PreTeaching.FelonyStatement}').form-control
+      .form-group
+        label(for='inputPreTeaching.DateStudentTeaching').col-lg-2.control-label DateStudentTeaching
+        .col-lg-2
+          input(type='date', name='inputPreTeaching.DateStudentTeaching', value='#{student.PreTeaching.DateStudentTeaching}').form-control
+      .form-group
+        label(for='inputPreTeaching.TCPApprovalToST').col-lg-2.control-label TCPApprovalToST
+        .col-lg-2
+          input(type='date', name='inputPreTeaching.TCPApprovalToST', value='#{student.PreTeaching.TCPApprovalToST}').form-control
+      .form-group
+        label(for='inputPreTeaching.SPEDOBSHRS').col-lg-2.control-label SPEDOBSHRS
+        .col-lg-1
+          input(type='text', name='inputPreTeaching.SPEDOBSHRS', value='#{student.PreTeaching.SPEDOBSHRS}').form-control
+        label(for='inputPreTeaching.EDUC345').col-lg-2.control-label EDUC345
+        .col-lg-1
+          input(type='text', name='inputPreTeaching.EDUC345', value='#{student.PreTeaching.EDUC345}').form-control
+        label(for='inputPreTeaching.EDUC346').col-lg-2.control-label EDUC346
+        .col-lg-1
+          input(type='text', name='inputPreTeaching.EDUC346', value='#{student.PreTeaching.EDUC346}').form-control
+        label(for='inputPreTeaching.EDUC356').col-lg-2.control-label EDUC356
+        .col-lg-1
+          input(type='text', name='inputPreTeaching.EDUC356', value='#{student.PreTeaching.EDUC356}').form-control
+      .form-group
+        label(for='inputPreTeaching.Comments').col-lg-2.control-label Comments
+        .col-lg-2
+          input(type='text', name='inputPreTeaching.Comments', value='#{student.PreTeaching.Comments}').form-control
+      fieldset
+        legend Student Teaching Status
+      .form-group
+        label(for='inputStudentTeaching.SeniorPortfolio').col-lg-2.control-label Senior Portfolio
+        .col-lg-1
+          input(type='checkbox', name='inputStudentTeaching.SeniorPortfolio', checked=student.StudentTeaching.SeniorPortfolio).form-control.editCheckbox
+        label(for='inputStudentTeaching.Resume').col-lg-2.control-label Resume
+        .col-lg-1
+          input(type='checkbox', name='inputStudentTeaching.Resume', checked=student.StudentTeaching.Resume).form-control.editCheckbox
+        label(for='inputStudentTeaching.CertificationApp').col-lg-2.control-label Certification Application
+        .col-lg-1
+          input(type='checkbox', name='inputStudentTeaching.CertificationApp', checked=student.StudentTeaching.CertificationApp).form-control.editCheckbox
+      .form-group
+        label(for='inputStudentTeaching.FelonyStatement').col-lg-2.control-label FelonyStatement
+        .col-lg-2
+          input(type='date', name='inputStudentTeaching.FelonyStatement', value='#{student.StudentTeaching.FelonyStatement}').form-control
+      .form-group
+        label(for='inputStudentTeaching.StudentTeachingStartDate').col-lg-2.control-label StudentTeachingStartDate
+        .col-lg-2
+          input(type='date', name='inputStudentTeaching.StudentTeachingStartDate', value='#{student.StudentTeaching.StudentTeachingStartDate}').form-control
+      .form-group
+        label(for='inputStudentTeaching.GradDate').col-lg-2.control-label Graduation Date
+        .col-lg-2
+          input(type='date', name='inputStudentTeaching.GradDate', value='#{student.StudentTeaching.GradDate}').form-control
+      .form-group
+        label(for='inputStudentTeaching.InitialCertificationDate').col-lg-2.control-label Initial Certification Date
+        .col-lg-2
+          input(type='date', name='inputStudentTeaching.InitialCertificationDate', value='#{student.StudentTeaching.InitialCertificationDate}').form-control
+      .form-group
+        label(for='inputStudentTeaching.PraxisII.TestName').col-lg-2.control-label PraxisII Test Name
+        .col-lg-2
+          input(type='text', name='inputStudentTeaching.PraxisII.TestName', value='#{student.StudentTeaching.PraxisII.TestName}').form-control
+      .form-group
+        label(for='inputStudentTeaching.PraxisII.DateTaken').col-lg-2.control-label PraxisII Date Taken
+        .col-lg-2
+          input(type='date', name='inputStudentTeaching.PraxisII.DateTaken', value='#{student.StudentTeaching.PraxisII.DateTaken}').form-control
+      .form-group
+        label(for='inputStudentTeaching.PraxisII.Score').col-lg-2.control-label PraxisII Score
+        .col-lg-2
+          input(type='text', name='inputStudentTeaching.PraxisII.Score', value='#{student.StudentTeaching.PraxisII.Score}').form-control
+          
+      .form-group
+        label(for='inputStudentTeaching.FirstSemester.SchoolName').col-lg-2.control-label School Name
+        .col-lg-2
+          input(type='text', name='inputStudentTeaching.FirstSemester.SchoolName', value='#{student.StudentTeaching.FirstSemester.SchoolName}').form-control
+      .form-group
+        label(for='inputStudentTeaching.FirstSemester.TeacherName').col-lg-2.control-label Teacher Name
+        .col-lg-2
+          input(type='text', name='inputStudentTeaching.FirstSemester.TeacherName', value='#{student.StudentTeaching.FirstSemester.TeacherName}').form-control
+      .form-group
+        label(for='inputStudentTeaching.FirstSemester.Dates').col-lg-2.control-label Dates
+        .col-lg-2
+          input(type='date', name='inputStudentTeaching.FirstSemester.Dates', value='#{student.StudentTeaching.FirstSemester.Dates}').form-control
+      .form-group
+        label(for='inputStudentTeaching.FirstSemester.Contract').col-lg-2.control-label Contract
+        .col-lg-1
+          input(type='checkbox', name='inputStudentTeaching.FirstSemester.Contract', checked=student.StudentTeaching.FirstSemester.Contract).form-control.editCheckbox
+        label(for='inputStudentTeaching.StudentTeacherPracticum').col-lg-2.control-label Student Teacher Practicum
+        .col-lg-1
+          input(type='checkbox', name='inputStudentTeaching.FirstSemester.StudentTeacherPracticum', checked=student.StudentTeaching.FirstSemester.StudentTeacherPracticum).form-control.editCheckbox
+        label(for='inputStudentTeaching.FirstSemester.CTEval').col-lg-2.control-label CTEval
+        .col-lg-1
+          input(type='checkbox', name='inputStudentTeaching.FirstSemester.CTEval', checked=student.StudentTeaching.FirstSemester.CTEval).form-control.editCheckbox
+        label(for='inputStudentTeaching.FirstSemester.CTReflectiveQuestions').col-lg-2.control-label CTReflectiveQuestions
+        .col-lg-1
+          input(type='checkbox', name='inputStudentTeaching.FirstSemester.CTReflectiveQuestions', checked=student.StudentTeaching.FirstSemester.CTReflectiveQuestions).form-control.editCheckbox
+      
+      .form-group
+        label(for='inputStudentTeaching.SecondSemester.SchoolName').col-lg-2.control-label School Name
+        .col-lg-2
+          input(type='text', name='inputStudentTeaching.SecondSemester.SchoolName', value='#{student.StudentTeaching.SecondSemester.SchoolName}').form-control
+      .form-group
+        label(for='inputStudentTeaching.SecondSemester.TeacherName').col-lg-2.control-label Teacher Name
+        .col-lg-2
+          input(type='text', name='inputStudentTeaching.SecondSemester.TeacherName', value='#{student.StudentTeaching.SecondSemester.TeacherName}').form-control
+      .form-group
+        label(for='inputStudentTeaching.SecondSemester.Dates').col-lg-2.control-label Dates
+        .col-lg-2
+          input(type='date', name='inputStudentTeaching.SecondSemester.Dates', value='#{student.StudentTeaching.SecondSemester.Dates}').form-control
+      .form-group
+        label(for='inputStudentTeaching.SecondSemester.Contract').col-lg-2.control-label Contract
+        .col-lg-1
+          input(type='checkbox', name='inputStudentTeaching.SecondSemester.Contract', checked=student.StudentTeaching.SecondSemester.Contract).form-control.editCheckbox
+        label(for='inputStudentTeaching..StudentTeacherPracticum').col-lg-2.control-label Student Teacher Practicum
+        .col-lg-1
+          input(type='checkbox', name='inputStudentTeaching.SecondSemester.StudentTeacherPracticum', checked=student.StudentTeaching.SecondSemester.StudentTeacherPracticum).form-control.editCheckbox
+        label(for='inputStudentTeaching.SecondSemester.CTEval').col-lg-2.control-label CTEval
+        .col-lg-1
+          input(type='checkbox', name='inputStudentTeaching.SecondSemester.CTEval', checked=student.StudentTeaching.SecondSemester.CTEval).form-control.editCheckbox
+        label(for='inputStudentTeaching.SecondSemester.CTReflectiveQuestions').col-lg-2.control-label CTReflectiveQuestions
+        .col-lg-1
+          input(type='checkbox', name='inputStudentTeaching.SecondSemester.CTReflectiveQuestions', checked=student.StudentTeaching.SecondSemester.CTReflectiveQuestions).form-control.editCheckbox
