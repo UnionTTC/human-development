@@ -1,17 +1,26 @@
 extends ../layout
 
 block content
-  h2(style='text-align: center') Template 3
-  table.table.table-bordered
+  h2(style='text-align: center') Pre-Student Teaching Application
+  table.table.table-bordered.table-reponsive
     thead
       tr
         th Last Name
         th First Name
         th Major
-        th Meet Requirements
     tbody
-      tr
-        td Dylan
-        td Smith
-        td Computer Science
-        td Yes
+      each student in students
+        tr
+          td #{student.LastName}
+          td #{student.FirstName}
+          td #{student.Major}
+  h4(style='text-align: center') The students listed above have met the following requirements:
+  ul.list-inline
+      li Date Student Teaching
+      li Application
+      li Recommendation
+      li Felony Statement
+      li Background Check
+      li Physical / TB
+      li GPA 2.75 or above
+      li Work Request

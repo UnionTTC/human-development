@@ -8,11 +8,20 @@ block content
         th Last Name
         th First Name
         th Major
-        th Meet Requirements
     tbody
       each student in students
         tr
           td #{student.LastName}
           td #{student.FirstName}
           td #{student.Major}
-          td Yes
+  h4(style='text-align: center') The students listed above have met the following requirements:
+  ul.list-inline
+      li EDUC 125 C or above
+      li Felony Statement
+      li Autobiography
+      li Speech & Hearing
+      li Myers-Brigs
+      li Observation Hours
+      li Provisional Application
+      li Recommendations
+      li GPA 2.75 or above

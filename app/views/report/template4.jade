@@ -1,17 +1,16 @@
 extends ../layout
 
 block content
-  h2(style='text-align: center') Template 4
+  h2(style='text-align: center') GPA Report
   table.table.table-bordered
     thead
       tr
         th Last Name
         th First Name
         th Major
-        th Meet Requirements
     tbody
-      tr
-        td Dylan
-        td Smith
-        td Computer Science
-        td Yes
+      each student in students
+        tr
+          td #{student.LastName}
+          td #{student.FirstName}
+          td #{student.Major}
